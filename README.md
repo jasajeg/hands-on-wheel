@@ -102,3 +102,13 @@ void loop() {
     
     delay(100); // Small delay to prevent serial flooding
 }
+
+<img width="1320" height="1869" alt="blueled" src="https://github.com/user-attachments/assets/f9eccd01-de81-4783-8984-0b06c2db4530" />
+
+
+
+<img width="1320" height="762" alt="redled" src="https://github.com/user-attachments/assets/a0ea339d-252e-4eb5-bcda-a250053bc2a1" />
+
+
+
+
