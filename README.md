@@ -1,10 +1,11 @@
-# hands-on-wheel
+ARDUINO CODE:
+
 #include <CapacitiveSensor.h>
 
 /*
  * Capacitive "Hands-On-Wheel" Detection Circuit
  * Author: Jasakan Jegatheesvaran
- * Description: Embedded C logic for a microcontroller to detect physical driver engagement
+ * Description: Arduino logic for a microcontroller to detect physical driver engagement
  * using capacitive copper tape sensors. Includes a "dead man's switch" timer
  * to mimic industry-standard autonomous vehicle safety protocols (Autopilot Nag).
  */
@@ -102,6 +103,10 @@ void loop() {
     
     delay(100); // Small delay to prevent serial flooding
 }
+
+
+PROJECT: 
+
 
 <img width="1320" height="762" alt="blueled" src="https://github.com/user-attachments/assets/f9eccd01-de81-4783-8984-0b06c2db4530" />
 
