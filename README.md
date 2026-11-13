@@ -103,12 +103,47 @@ void loop() {
     delay(100); // Small delay to prevent serial flooding
 }
 
-<img width="1320" height="1869" alt="blueled" src="https://github.com/user-attachments/assets/f9eccd01-de81-4783-8984-0b06c2db4530" />
+<img width="1320" height="762" alt="blueled" src="https://github.com/user-attachments/assets/f9eccd01-de81-4783-8984-0b06c2db4530" />
+
+Blue LED: Autopilot Active & Driver Prompt
+System Logic & State Machine Behavior:
+
+Solid ON: Indicates nominal operation. The capacitive sensors detect physical engagement, the "dead man's switch" timer is reset to 15 seconds, and the simulated Autopilot is safely engaged.
+
+Rapid Flashing: Indicates the Warning/Nag state. Triggered when the timer drops below 5 seconds. Acts as a visual prompt alongside the audio buzzer for the driver to return their hands to the wheel.
+
+OFF: Indicates a system lockout or critical failure.
+
+Hardware & Electrical Characteristics:
+
+Component: Standard 5mm Blue Light Emitting Diode.
+
+Forward Voltage: ~3.0V – 3.3V (Requires a wider bandgap semiconductor material, typically Indium Gallium Nitride / InGaN).
+
+Wavelength: ~450 nm – 470 nm.
+
+Circuit Integration: Driven by microcontroller Digital Pin 8. Requires a smaller current-limiting resistor (e.g., 100Ω - 220Ω) compared to the red LED due to its higher turn-on voltage requirements against a standard 5V logic level.
 
 
 
 <img width="1320" height="762" alt="redled" src="https://github.com/user-attachments/assets/a0ea339d-252e-4eb5-bcda-a250053bc2a1" />
 
 
+Red LED: Critical Warning & System Lockout
+System Logic & State Machine Behavior:
+
+Solid ON: Indicates a Critical Lockout state. Triggered when the 15-second timer reaches zero without capacitive feedback. The simulated Autopilot is forcefully disengaged, and the system is halted until a hard physical reset occurs.
+
+OFF: Indicates nominal operation or the standard warning phase. The red LED remains entirely dark unless a critical inattention threshold is breached.
+
+Hardware & Electrical Characteristics:
+
+Component: Standard 5mm Red Light Emitting Diode.
+
+Forward Voltage: ~1.8V – 2.0V (Utilizes a lower bandgap material, typically Gallium Arsenide Phosphide / GaAsP or Aluminum Gallium Arsenide / AlGaAs).
+
+Wavelength: ~620 nm – 630 nm.
+
+Circuit Integration: Driven by microcontroller Digital Pin 9. Requires a larger current-limiting resistor (e.g., 220Ω - 330Ω) to safely drop the remaining voltage from the 5V logic pin and prevent diode burnout.
 
 
